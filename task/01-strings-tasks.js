@@ -22,7 +22,10 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+    var a = value1;
+    var b = value2;
+    var z = a + b;
+    return z;
 }
 
 
@@ -38,7 +41,8 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+    var z = value.length;
+    return z;
 }
 
 /**
@@ -55,7 +59,8 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+    var z = `Hello, ${firstName} ${lastName}!`;
+    return z;
 }
 
 /**
@@ -69,7 +74,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+    var z = value.slice(7, -1);
+    return z;
 }
 
 
@@ -84,8 +90,9 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
-}
+    var z = value.slice(0, 1);
+    return z;
+ }
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -99,7 +106,8 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    var z = value.trim();
+    return z;
 }
 
 /**
@@ -114,7 +122,8 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    var z = value.repeat(count);
+    return z;
 }
 
 /**
@@ -130,7 +139,8 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    var z = str.replace(value, '');
+    return z;
 }
 
 /**
@@ -145,7 +155,9 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    var str = str.replace('<','');
+    var str = str.replace('>','');
+    return str;   
 }
 
 
@@ -160,7 +172,8 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    str = str.toUpperCase();
+    return str;
 }
 
 /**
@@ -174,7 +187,8 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    var arrayEmail = str.split(';');
+    return arrayEmail;
 }
 
 /**
@@ -201,7 +215,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+    var fig = 
+         '┌' + '─'.repeat(width-2) + '┐' + '\n' +
+        ('│' + ' '.repeat(width-2) + '│' + '\n').repeat(height-2) +
+         '└' + '─'.repeat(width-2) + '┘' + '\n' ;
+    return fig;
 }
 
 
@@ -221,7 +239,8 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    str = str.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+    return str;
 }
 
 /**
@@ -238,9 +257,8 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    return typeof value == 'string' || value instanceof String ? true : false;
 }
-
 
 /**
  * Returns playid card id.
@@ -266,9 +284,13 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
+
 function getCardId(value) {
     throw new Error('Not implemented');
 }
+
+
+
 
 
 module.exports = {
